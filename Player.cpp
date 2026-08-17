@@ -1,4 +1,4 @@
-#include "Player.h"
+#include "..\..\..\..\..\..\..\Shreya\AppData\Roaming\VisualParadigm\ws\teamwork_client\projects\COS214-P2-UML\Player.h"
 
 void Player::setName(string n) {
 	this->name = n;
