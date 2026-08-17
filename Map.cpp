@@ -1,8 +1,10 @@
-#include "..\..\..\..\..\..\..\Shreya\AppData\Roaming\VisualParadigm\ws\teamwork_client\projects\COS214-P2-UML\Map.h"
+#include "Map.h"
+#include <iostream>
+#include <list>
 
-Map::Map(string title) {
-	// TODO - implement Map::Map
-	throw "Not yet implemented";
+Map::Map(string t) {
+	
+	title = t;
 }
 
 string Map::getTitle() {
@@ -11,4 +13,9 @@ string Map::getTitle() {
 
 void Map::setTitle(string title) {
 	this->title = title;
+}
+
+~Map(){ //destructor
+	std::cout << "Deleting Map" << std::endl;
+
 }

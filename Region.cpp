@@ -1,16 +1,17 @@
-#include "..\..\..\..\..\..\..\Shreya\AppData\Roaming\VisualParadigm\ws\teamwork_client\projects\COS214-P2-UML\Region.h"
+#include "Region.h"
 
-Region::Region(string title) {
-	// TODO - implement Region::Region
-	throw "Not yet implemented";
+Region::Region(string title) : Map(title) {
+	
 }
 
 void Region::add(Map param) {
-	// TODO - implement Region::add
-	throw "Not yet implemented";
+	
 }
 
 void Region::remove(Map param) {
-	// TODO - implement Region::remove
-	throw "Not yet implemented";
+	
+}
+
+~Region(){
+
 }
