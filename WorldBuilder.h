@@ -1,17 +1,18 @@
 #ifndef WORLDBUILDER_H
 #define WORLDBUILDER_H
 
+#include <iostream>
+
 class WorldBuilder {
 
 private:
 	std::string worldTitle;
 
 public:
-	virtual ~WorldBuilder() = 0;
+	virtual ~WorldBuilder();
 
-	std::string getWorldTitle();
+	std::string getWorldTitle() const;
 
-	void setWorldTitle(std::string worldTitle);
 
 	virtual void createObstacle() = 0;
 
@@ -19,7 +20,7 @@ public:
 
 	virtual void createNPC() = 0;
 
-	WorldBuilder();
+	WorldBuilder(std::string);
 };
 
 #endif
