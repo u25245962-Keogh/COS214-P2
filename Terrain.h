@@ -9,7 +9,7 @@ private:
 
 
 public:
-	Terrain(std::string);
+	Terrain();
 
 	virtual ~Terrain();
 

@@ -1,11 +1,11 @@
 #ifndef DESERTNPC_H
 #define DESERTNPC_H
 
-class DesertNPC : NPC {
+#include "NPC.h"
 
-
+class DesertNPC : public NPC {
 public:
-	DesertNPC();
+    DesertNPC(std::string name):NPC(name){}
 };
 
 #endif

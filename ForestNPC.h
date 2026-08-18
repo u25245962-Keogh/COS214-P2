@@ -1,11 +1,11 @@
 #ifndef FORESTNPC_H
 #define FORESTNPC_H
 
-class ForestNPC : NPC {
+#include "NPC.h"
 
-
+class ForestNPC : public NPC {
 public:
-	ForestNPC();
+    ForestNPC(std::string name):NPC(name){}
 };
 
 #endif

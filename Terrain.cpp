@@ -1,7 +1,7 @@
 #include "Terrain.h"
 
-Terrain::Terrain(std::string name) {
-	this->name = name;
+Terrain::Terrain() {
+	
 }
 
 std::string Terrain::getName() const{

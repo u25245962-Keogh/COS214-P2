@@ -1,11 +1,11 @@
 #ifndef OCEANNPC_H
 #define OCEANNPC_H
 
-class OceanNPC : NPC {
+#include "NPC.h"
 
-
+class OceanNPC : public NPC {
 public:
-	OceanNPC();
+    OceanNPC(std::string name):NPC(name){}
 };
 
 #endif

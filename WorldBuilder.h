@@ -16,11 +16,11 @@ public:
 
 	std::string getWorldTitle() const;
 
-	virtual Obstacle* createObstacle() = 0;
+	virtual Obstacle* createObstacle(std::string) = 0;
 
 	virtual Terrain* createTerrain() = 0;
 
-	virtual NPC* createNPC() = 0;
+	virtual NPC* createNPC(std::string) = 0;
 
 	WorldBuilder(std::string);
 };

@@ -1,11 +1,9 @@
 #ifndef DESERTTERRAIN_H
 #define DESERTTERRAIN_H
+#include "Terrain.h"
 
-class DesertTerrain : Terrain {
-
-
+class DesertTerrain : public Terrain {
 public:
-	DesertTerrain();
+    std::string getName() const{ return "desert"; }
 };
-
 #endif

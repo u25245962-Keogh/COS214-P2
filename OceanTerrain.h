@@ -1,11 +1,11 @@
 #ifndef OCEANTERRAIN_H
 #define OCEANTERRAIN_H
 
-class OceanTerrain : Terrain {
+#include "Terrain.h"
 
-
+class OceanTerrain : public Terrain {
 public:
-	OceanTerrain();
+    std::string getName() const{ return "ocean"; }
 };
 
 #endif

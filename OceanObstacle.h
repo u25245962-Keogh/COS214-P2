@@ -1,11 +1,11 @@
 #ifndef OCEANOBSTACLE_H
 #define OCEANOBSTACLE_H
 
-class OceanObstacle : Obstacle {
+#include "Obstacle.h"
 
-
+class OceanObstacle : public Obstacle {
 public:
-	OceanObstacle();
+    OceanObstacle(std::string name):Obstacle(name){}
 };
 
 #endif
