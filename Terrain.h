@@ -9,13 +9,11 @@ private:
 
 
 public:
-	Terrain();
+	Terrain(std::string);
 
-	virtual ~Terrain() = 0;
+	virtual ~Terrain();
 
-	std::string getName();
-
-	void setName(std::string name);
+	std::string getName() const;
 
 };
 

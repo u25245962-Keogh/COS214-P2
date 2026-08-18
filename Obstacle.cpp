@@ -1,9 +1,9 @@
 #include "Obstacle.h"
 
-string Obstacle::getName() {
+std::string Obstacle::getName() const {
 	return this->name;
 }
 
-void Obstacle::setName(string name) {
+Obstacle::Obstacle(std::string name){
 	this->name = name;
 }
