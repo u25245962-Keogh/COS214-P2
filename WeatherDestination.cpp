@@ -1,6 +1,7 @@
 #include "WeatherDestination.h"
 
-WeatherDestination::WeatherDestination(Map* map, std::string title) : Map(title), wrappedMap(map) {
+WeatherDestination::WeatherDestination(Map* map, std::string title, std::string weatherCondition) 
+	: Map(title), wrappedMap(map), weatherCondition(weatherCondition) {
 	if (wrappedMap == nullptr) {
 		throw std::invalid_argument("Wrapped map cannot be null");
 	}
@@ -16,6 +17,10 @@ void WeatherDestination::remove(Map* m) {
 	if (wrappedMap != nullptr) {
 		wrappedMap->remove(m);
 	}
+}
+
+std::string WeatherDestination::getWeatherCondition() {
+	return weatherCondition;
 }
 
 WeatherDestination::~WeatherDestination() {

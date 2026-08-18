@@ -1,6 +1,6 @@
 #ifndef WORLDBUILDER_H
 #define WORLDBUILDER_H
-
+#include <string>
 class WorldBuilder {
 
 private:

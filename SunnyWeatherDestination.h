@@ -5,10 +5,18 @@
 
 class SunnyWeatherDestination : public WeatherDestination {
 
+private:
+	std::string temperature;
+	std::string uvIndex;
+
 public:
-	SunnyWeatherDestination(Map* map);
+	SunnyWeatherDestination(Map* map, std::string temperature = "75F", std::string uvIndex = "High");
 
 	void print();
+
+	std::string getTemperature();
+
+	std::string getUVIndex();
 
 	~SunnyWeatherDestination();
 };

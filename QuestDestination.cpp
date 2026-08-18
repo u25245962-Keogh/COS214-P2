@@ -1,6 +1,7 @@
 #include "QuestDestination.h"
 
-QuestDestination::QuestDestination(Map* map, std::string title) : Map(title), wrappedMap(map) {
+QuestDestination::QuestDestination(Map* map, std::string title, std::string questType) 
+	: Map(title), wrappedMap(map), questType(questType) {
 	if (wrappedMap == nullptr) {
 		throw std::invalid_argument("Wrapped map cannot be null");
 	}
@@ -16,6 +17,10 @@ void QuestDestination::remove(Map* m) {
 	if (wrappedMap != nullptr) {//null checking
 		wrappedMap->remove(m);
 	}
+}
+
+std::string QuestDestination::getQuestType() {
+	return questType;
 }
 
 QuestDestination::~QuestDestination() {

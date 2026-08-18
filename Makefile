@@ -17,7 +17,7 @@ LDFLAGS :=
 LDLIBS := 
 
 # Target executable name
-TARGET := $(BUILD_DIR)/executable
+TARGET := $(BUILD_DIR)/wayfarer
 
 # Find all cpp files in the source directory
 SOURCES := $(wildcard $(SRC_DIR)/*.cpp)

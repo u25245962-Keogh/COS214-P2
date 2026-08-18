@@ -5,10 +5,18 @@
 
 class BossQuestDestination : public QuestDestination {
 
+private:
+	std::string bossName;
+	std::string difficulty;
+
 public:
-	BossQuestDestination(Map* map, std::string bossName = "Boss");
+	BossQuestDestination(Map* map, std::string bossName = "Boss", std::string difficulty = "Medium");
 
 	void print();
+
+	std::string getBossName();
+
+	std::string getDifficulty();
 
 	~BossQuestDestination();
 };

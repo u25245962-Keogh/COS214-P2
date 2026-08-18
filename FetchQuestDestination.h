@@ -5,10 +5,18 @@
 
 class FetchQuestDestination : public QuestDestination {
 
+private:
+	std::string itemName;
+	std::string itemLocation;
+
 public:
-	FetchQuestDestination(Map* map, std::string item = "Item");
+	FetchQuestDestination(Map* map, std::string itemName = "Item", std::string itemLocation = "Unknown");
 
 	void print();
+
+	std::string getItemName();
+
+	std::string getItemLocation();
 
 	~FetchQuestDestination();
 };
