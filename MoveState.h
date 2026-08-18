@@ -3,13 +3,14 @@
 
 class MoveState {
 
-
 public:
 	virtual void move() = 0;
 
 	virtual void print() = 0;
 
 	MoveState();
+
+	~MoveState();
 };
 
 #endif

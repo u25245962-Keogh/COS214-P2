@@ -1,11 +1,15 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
+#include "MoveState.h"
+#include "GPS.h"
+
 class Player {
 
 private:
-	MoveState state;
+	MoveState* state;
 	string name;
+	GPS gps;
 
 public:
 	void setName(string n);
@@ -16,7 +20,7 @@ public:
 
 	Player();
 
-	void ~Player();
+	~Player();
 };
 
 #endif
