@@ -1,15 +1,15 @@
-#include "..\..\..\..\..\..\..\Shreya\AppData\Roaming\VisualParadigm\ws\teamwork_client\projects\COS214-P2-UML\Terrain.h"
+#include "Terrain.h"
 
 Terrain::Terrain() {
 	// TODO - implement Terrain::Terrain
 	throw "Not yet implemented";
 }
 
-string Terrain::getName() {
+std::string Terrain::getName() {
 	return this->name;
 }
 
-void Terrain::setName(string name) {
+void Terrain::setName(std::string name) {
 	this->name = name;
 }
 

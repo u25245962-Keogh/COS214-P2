@@ -1,11 +1,22 @@
-#include "..\..\..\..\..\..\..\Shreya\AppData\Roaming\VisualParadigm\ws\teamwork_client\projects\COS214-P2-UML\FetchQuestDestination.h"
+#include "FetchQuestDestination.h"
+#include "QuestDestination.h"
+#include <iostream>
 
-FetchQuestDestination::FetchQuestDestination() {
-	// TODO - implement FetchQuestDestination::FetchQuestDestination
-	throw "Not yet implemented";
+FetchQuestDestination::FetchQuestDestination(Map* map, std::string item) 
+	: QuestDestination(map, "FetchQuest: " + item) {
 }
 
 void FetchQuestDestination::print() {
-	// TODO - implement FetchQuestDestination::print
-	throw "Not yet implemented";
+	std::cout << "=== Fetch Quest Destination ===" << std::endl;
+	std::cout << "Title: " << getTitle() << std::endl;
+	std::cout << "Fetch the required item" << std::endl;
+	if (wrappedMap != nullptr) {
+		std::cout << "Area details:" << std::endl;
+		wrappedMap->print();
+	}
+	std::cout << "-----------------------------" << std::endl;
+}
+
+FetchQuestDestination::~FetchQuestDestination() {
+	std::cout << "Deleting FetchQuestDestination: " << getTitle() << std::endl;
 }

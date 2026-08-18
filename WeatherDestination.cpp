@@ -1,6 +1,24 @@
-#include "..\..\..\..\..\..\..\Shreya\AppData\Roaming\VisualParadigm\ws\teamwork_client\projects\COS214-P2-UML\WeatherDestination.h"
+#include "WeatherDestination.h"
 
-WeatherDestination::WeatherDestination() {
-	// TODO - implement WeatherDestination::WeatherDestination
-	throw "Not yet implemented";
+WeatherDestination::WeatherDestination(Map* map, std::string title) : Map(title), wrappedMap(map) {
+	if (wrappedMap == nullptr) {
+		throw std::invalid_argument("Wrapped map cannot be null");
+	}
+}
+
+void WeatherDestination::add(Map* m) {
+	if (wrappedMap != nullptr) {
+		wrappedMap->add(m);
+	}
+}
+
+void WeatherDestination::remove(Map* m) {
+	if (wrappedMap != nullptr) {
+		wrappedMap->remove(m);
+	}
+}
+
+WeatherDestination::~WeatherDestination() {
+	std::cout << "Deleting WeatherDestination: " << getTitle() << std::endl;
+	// Note: we don't delete wrappedMap here as it may be managed elsewhere
 }

@@ -1,13 +1,16 @@
 #ifndef FETCHQUESTDESTINATION_H
 #define FETCHQUESTDESTINATION_H
+#include "QuestDestination.h"
+#include <string>
 
-class FetchQuestDestination : QuestDestination {
-
+class FetchQuestDestination : public QuestDestination {
 
 public:
-	FetchQuestDestination();
+	FetchQuestDestination(Map* map, std::string item = "Item");
 
 	void print();
+
+	~FetchQuestDestination();
 };
 
 #endif

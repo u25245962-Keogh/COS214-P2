@@ -1,11 +1,21 @@
-#include "..\..\..\..\..\..\..\Shreya\AppData\Roaming\VisualParadigm\ws\teamwork_client\projects\COS214-P2-UML\RainWeatherDestination.h"
+#include "RainWeatherDestination.h"
+#include "WeatherDestination.h"
+#include <iostream>
 
-RainWeatherDestination::RainWeatherDestination() {
-	// TODO - implement RainWeatherDestination::RainWeatherDestination
-	throw "Not yet implemented";
+RainWeatherDestination::RainWeatherDestination(Map* map) 
+	: WeatherDestination(map, "RainyWeather: " + map->getTitle()) {
 }
 
 void RainWeatherDestination::print() {
-	// TODO - implement RainWeatherDestination::print
-	throw "Not yet implemented";
+	std::cout << "~~ Rain Weather Destination ~~" << std::endl;
+	std::cout << "Weather: RAINY" << std::endl;
+	if (wrappedMap != nullptr) {
+		std::cout << "Area details:" << std::endl;
+		wrappedMap->print();
+	}
+	std::cout << "-----------------------------" << std::endl;
+}
+
+RainWeatherDestination::~RainWeatherDestination() {
+	std::cout << "Deleting RainWeatherDestination: " << getTitle() << std::endl;
 }

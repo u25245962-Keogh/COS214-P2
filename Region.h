@@ -1,18 +1,21 @@
 #ifndef REGION_H
 #define REGION_H
 #include "Map.h"
-#include "<vector>
+#include <vector>
 
-class Region : Map {
+class Region : public Map {
+
+private:
+	std::vector<Map*> children;
 
 public:
-	std::vector<Map*> next;
-
 	Region(std::string title);
 
-	void add(Map param);
+	void add(Map* m);
 
-	void remove(Map param);
+	void remove(Map* m);
+
+	std::vector<Map*> getChildren();
 
 	~Region();
 };

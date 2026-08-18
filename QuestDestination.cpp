@@ -1,6 +1,24 @@
-#include "..\..\..\..\..\..\..\Shreya\AppData\Roaming\VisualParadigm\ws\teamwork_client\projects\COS214-P2-UML\QuestDestination.h"
+#include "QuestDestination.h"
 
-QuestDestination::QuestDestination() {
-	// TODO - implement QuestDestination::QuestDestination
-	throw "Not yet implemented";
+QuestDestination::QuestDestination(Map* map, std::string title) : Map(title), wrappedMap(map) {
+	if (wrappedMap == nullptr) {
+		throw std::invalid_argument("Wrapped map cannot be null");
+	}
+}
+
+void QuestDestination::add(Map* m) {
+	if (wrappedMap != nullptr) { //null checking
+		wrappedMap->add(m);
+	}
+}
+
+void QuestDestination::remove(Map* m) {
+	if (wrappedMap != nullptr) {//null checking
+		wrappedMap->remove(m);
+	}
+}
+
+QuestDestination::~QuestDestination() {
+	std::cout << "Deleting QuestDestination: " << getTitle() << std::endl;
+	
 }

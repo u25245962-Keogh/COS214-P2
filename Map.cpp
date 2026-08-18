@@ -16,6 +16,10 @@ void Map::setTitle(std::string t) {
 	title = t;
 }
 
+void Map::print() {
+	std::cout << "Map" << std::endl;
+}
+
 Map::~Map(){ //destructor
 	std::cout << "Deleting Map" << std::endl;
 

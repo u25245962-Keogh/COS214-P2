@@ -1,12 +1,13 @@
 #ifndef GPS_H
 #define GPS_H
 
-#include "Map.h"
+#include <string>
 
-class GPS{
-	string getPos(const Map& map){
-		return map.terrain->getName();
-	}
+class Map;  // Forward declaration
+
+class GPS {
+public:
+	std::string getPos(const Map& map);
 };
 
 #endif

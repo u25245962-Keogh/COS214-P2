@@ -1,24 +1,22 @@
 #ifndef TERRAIN_H
 #define TERRAIN_H
+#include <string>
 
 class Terrain {
 
 private:
-	string name;
-	int attribute;
+	std::string name;
+
 
 public:
 	Terrain();
 
-	virtual void ~Terrain() = 0;
+	virtual ~Terrain() = 0;
 
-	string getName();
+	std::string getName();
 
-	void setName(string name);
+	void setName(std::string name);
 
-	void getAttribute();
-
-	void setAttribute(int attribute);
 };
 
 #endif

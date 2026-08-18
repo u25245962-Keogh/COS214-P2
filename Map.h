@@ -23,13 +23,15 @@ private:
 public:
 	Map(std::string title);
 
-	virtual void add(Map m) = 0;
+	virtual void add(Map* m) = 0;
 
-	virtual void remove(Map m) = 0;
+	virtual void remove(Map* m) = 0;
 
 	std::string getTitle();
 
 	void setTitle(std::string title);
+
+	virtual void print();
 
 	 ~Map();
 

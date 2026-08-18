@@ -1,15 +1,17 @@
 #ifndef OBSTACLE_H
 #define OBSTACLE_H
+#include <iostream>
+#include <string>
 
 class Obstacle {
 
 private:
-	string name;
+	std::string name;
 
 public:
-	string getName();
+	std::string getName();
 
-	void setName(string name);
+	void setName(std::string name);
 };
 
 #endif

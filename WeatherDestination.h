@@ -1,15 +1,23 @@
 #ifndef WEATHERDESTINATION_H
 #define WEATHERDESTINATION_H
+#include "Map.h"
+#include <iostream>
 
-class WeatherDestination {
+class WeatherDestination : public Map {
 
-private:
-	Map* map;
+protected:
+	Map* wrappedMap;
 
 public:
-	WeatherDestination();
+	WeatherDestination(Map* map, std::string title);
 
 	virtual void print() = 0;
+
+	void add(Map* m);
+
+	void remove(Map* m);
+
+	virtual ~WeatherDestination();
 };
 
 #endif

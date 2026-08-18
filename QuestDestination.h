@@ -1,15 +1,23 @@
 #ifndef QUESTDESTINATION_H
 #define QUESTDESTINATION_H
+#include "Map.h"
+#include <iostream>
 
-class QuestDestination {
+class QuestDestination : public Map {
 
-private:
-	Map* map;
+protected:
+	Map* wrappedMap;
 
 public:
-	QuestDestination();
+	QuestDestination(Map* map, std::string title);
 
 	virtual void print() = 0;
+
+	void add(Map* m);
+
+	void remove(Map* m);
+
+	virtual ~QuestDestination();
 };
 
 #endif

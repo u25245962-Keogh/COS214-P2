@@ -4,16 +4,16 @@
 class NPC {
 
 private:
-	string name;
+	std::string name;
 
 public:
 	NPC();
 
-	virtual void ~NPC() = 0;
+	virtual ~NPC() = 0;
 
-	string getName();
+	std::string getName();
 
-	void setName(string name);
+	void setName(std::string name);
 };
 
 #endif

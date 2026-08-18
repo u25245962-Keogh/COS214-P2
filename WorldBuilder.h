@@ -4,14 +4,14 @@
 class WorldBuilder {
 
 private:
-	string worldTitle;
+	std::string worldTitle;
 
 public:
-	virtual void ~WorldBuilder() = 0;
+	virtual ~WorldBuilder() = 0;
 
-	string getWorldTitle();
+	std::string getWorldTitle();
 
-	void setWorldTitle(string worldTitle);
+	void setWorldTitle(std::string worldTitle);
 
 	virtual void createObstacle() = 0;
 

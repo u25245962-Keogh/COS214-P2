@@ -1,17 +1,21 @@
 #ifndef DESTINATION_H
 #define DESTINATION_H
+#include "Map.h"
+#include <string>
+using namespace std;
 
-class Destination : Map {
-
+class Destination : public Map {
 
 public:
 	Destination(string title);
 
 	void print();
 
-	void add(Map param);
+	void add(Map* m);
 
-	void remove(Map param);
+	void remove(Map* m);
+
+	~Destination();
 };
 
 #endif

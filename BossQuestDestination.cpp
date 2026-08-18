@@ -1,11 +1,22 @@
-#include "..\..\..\..\..\..\..\Shreya\AppData\Roaming\VisualParadigm\ws\teamwork_client\projects\COS214-P2-UML\BossQuestDestination.h"
+#include "BossQuestDestination.h"
+#include "QuestDestination.h"
+#include <iostream>
 
-BossQuestDestination::BossQuestDestination() {
-	// TODO - implement BossQuestDestination::BossQuestDestination
-	throw "Not yet implemented";
+BossQuestDestination::BossQuestDestination(Map* map, std::string bossName) 
+	: QuestDestination(map, "BossQuest: " + bossName) {
 }
 
 void BossQuestDestination::print() {
-	// TODO - implement BossQuestDestination::print
-	throw "Not yet implemented";
+	std::cout << "=== Boss Quest Destination ===" << std::endl;
+	std::cout << "Title: " << getTitle() << std::endl;
+	std::cout << "Defeat the boss!" << std::endl;
+	if (wrappedMap != nullptr) {
+		std::cout << "Area details:" << std::endl;
+		wrappedMap->print();
+	}
+	std::cout << "-----------------------------" << std::endl;
+}
+
+BossQuestDestination::~BossQuestDestination() {
+	std::cout << "Deleting BossQuestDestination: " << getTitle() << std::endl;
 }

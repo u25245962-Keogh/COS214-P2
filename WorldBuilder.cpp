@@ -1,4 +1,4 @@
-#include "..\..\..\..\..\..\..\Shreya\AppData\Roaming\VisualParadigm\ws\teamwork_client\projects\COS214-P2-UML\WorldBuilder.h"
+#include "WorldBuilder.h"
 
 string WorldBuilder::getWorldTitle() {
 	return this->worldTitle;
