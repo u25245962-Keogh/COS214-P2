@@ -1,19 +1,19 @@
 #ifndef NPC_H
 #define NPC_H
 
+#include <iostream>
+
 class NPC {
 
 private:
 	std::string name;
 
 public:
-	NPC();
 
-	virtual ~NPC() = 0;
+	NPC(std::string);
+	virtual ~NPC();
 
-	std::string getName();
-
-	void setName(std::string name);
+	std::string getName() const;
 };
 
 #endif

@@ -1,14 +1,10 @@
 #include "WorldBuilder.h"
 
-string WorldBuilder::getWorldTitle() {
+std::string WorldBuilder::getWorldTitle() const{
 	return this->worldTitle;
 }
 
-void WorldBuilder::setWorldTitle(string worldTitle) {
-	this->worldTitle = worldTitle;
-}
 
-WorldBuilder::WorldBuilder() {
-	// TODO - implement WorldBuilder::WorldBuilder
-	throw "Not yet implemented";
+WorldBuilder::WorldBuilder(std::string name) {
+ this->worldTitle = name;
 }

@@ -1,25 +1,28 @@
 #ifndef WORLDBUILDER_H
 #define WORLDBUILDER_H
-#include <string>
+
+#include <iostream>
+#include "Terrain.h"
+#include "Obstacle.h"
+#include "NPC.h"
+
 class WorldBuilder {
 
 private:
 	std::string worldTitle;
 
 public:
-	virtual ~WorldBuilder() = 0;
+	virtual ~WorldBuilder();
 
-	std::string getWorldTitle();
+	std::string getWorldTitle() const;
 
-	void setWorldTitle(std::string worldTitle);
+	virtual Obstacle* createObstacle() = 0;
 
-	virtual void createObstacle() = 0;
+	virtual Terrain* createTerrain() = 0;
 
-	virtual void createTerrain() = 0;
+	virtual NPC* createNPC() = 0;
 
-	virtual void createNPC() = 0;
-
-	WorldBuilder();
+	WorldBuilder(std::string);
 };
 
 #endif

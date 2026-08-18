@@ -9,9 +9,9 @@ private:
 	std::string name;
 
 public:
-	std::string getName();
-
-	void setName(std::string name);
+	virtual ~Obstacle();
+	Obstacle(std::string);
+	std::string getName()const;
 };
 
 #endif

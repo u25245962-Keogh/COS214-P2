@@ -13,7 +13,7 @@ using namespace std;
 class Map {
 
 protected:
-	Obstacle obstacle;
+	Obstacle* obstacle;
 	Terrain* terrain;
 	NPC* npc;
 	WorldBuilder* builder;
@@ -33,7 +33,7 @@ public:
 
 	virtual void print();
 
-	 ~Map();
+	 virtual ~Map();
 
 	 friend class GPS;
 };
