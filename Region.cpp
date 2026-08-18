@@ -1,17 +1,29 @@
 #include "Region.h"
+#include "Map.h"
+#include "<vector>
 
-Region::Region(string title) : Map(title) {
+Region::Region(std::string title) : Map(title) {
+	next = 
 	
 }
 
-void Region::add(Map param) {
+void Region::add(Map m) {
+	this.next.push_back(m);
+}
+
+void Region::remove(Map m) {
+	for (Map* child : this->next) {
+		
+		if(child.title == next.title){
+			delete child;
+		}
+	}
 	
 }
 
-void Region::remove(Map param) {
-	
-}
-
-~Region(){
-
+Region::~Region(){
+	for (Map* child : this->next) {
+		delete child; // Deletes the object on the heap
+	}
+	next.clear();
 }

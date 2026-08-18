@@ -1,6 +1,9 @@
 #ifndef MAP_H
 #define MAP_H
 
+#include <iostream>
+#include <string>
+
 class Map {
 
 protected:
@@ -9,20 +12,20 @@ protected:
 	NPC npc;
 	WorldBuilder builder;
 private:
-	string title;
+	std::string title;
 
 public:
-	Map(string title);
+	Map(std::string title);
 
-	virtual void add(Map param) = 0;
+	virtual void add(Map m) = 0;
 
-	virtual void remove(Map param) = 0;
+	virtual void remove(Map m) = 0;
 
-	string getTitle();
+	std::string getTitle();
 
-	void setTitle(string title);
+	void setTitle(std::string title);
 
-	void ~Map();
+	~Map();
 };
 
 #endif

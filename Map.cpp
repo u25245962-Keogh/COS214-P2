@@ -1,21 +1,22 @@
 #include "Map.h"
 #include <iostream>
-#include <list>
+#include <string>
 
-Map::Map(string t) {
+
+Map::Map(std::string t) {
 	
 	title = t;
 }
 
-string Map::getTitle() {
+std::string Map::getTitle() {
 	return this->title;
 }
 
-void Map::setTitle(string title) {
-	this->title = title;
+void Map::setTitle(std::string t) {
+	title = t;
 }
 
-~Map(){ //destructor
+Map::~Map(){ //destructor
 	std::cout << "Deleting Map" << std::endl;
 
 }
