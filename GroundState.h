@@ -1,15 +1,15 @@
 #ifndef GROUNDSTATE_H
 #define GROUNDSTATE_H
 
-class GroundState : MoveState {
+#include "MoveState.h"
+#include "AirState.h"
+#include "WaterState.h"
+#include "Player.h"
 
-
+class GroundState : public MoveState {
 public:
-	void move();
-
-	void print();
-
-	GroundState();
+    void move(Player* player, const std::string& terrain);
+    std::string getStateName() const;
 };
 
 #endif

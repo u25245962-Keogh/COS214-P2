@@ -1,16 +1,18 @@
-#include "..\..\..\..\..\..\..\Shreya\AppData\Roaming\VisualParadigm\ws\teamwork_client\projects\COS214-P2-UML\WaterState.h"
+#include "WaterState.h"
 
-void WaterState::move() {
-	// TODO - implement WaterState::move
-	throw "Not yet implemented";
-}
+void WaterState::move(Player* player, const std::string& terrain){
+        if (terrain == "desert") {
+            std::cout << "Taking off into Air from Ocean/Water...\n";
+            player->setState(new AirState());
+        } else if (terrain == "forest") {
+            std::cout << "Stepping onto Ground forest...\n";
+            player->setState(new GroundState());
+        } else {
+            // "ocean" or current state loop
+            std::cout << "Swimming/Sailing through Water...\n";
+        }
+    }
 
-void WaterState::print() {
-	// TODO - implement WaterState::print
-	throw "Not yet implemented";
-}
-
-WaterState::WaterState() {
-	// TODO - implement WaterState::WaterState
-	throw "Not yet implemented";
-}
+    std::string WaterState::getStateName() const{ 
+        return "Water"; 
+    }

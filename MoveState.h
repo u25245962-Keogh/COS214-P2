@@ -1,16 +1,18 @@
 #ifndef MOVESTATE_H
 #define MOVESTATE_H
 
+#include <iostream>
+#include <string>
+
+class Player;
+
 class MoveState {
-
 public:
-	virtual void move() = 0;
+    MoveState();
+    virtual ~MoveState();
 
-	virtual void print() = 0;
-
-	MoveState();
-
-	~MoveState();
+    virtual void move(Player* player, const std::string& terrain) = 0;
+    virtual std::string getStateName() const = 0;
 };
 
 #endif

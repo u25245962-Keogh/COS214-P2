@@ -1,26 +1,28 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
+#include <string>
 #include "MoveState.h"
-#include "GPS.h"
+#include "Map.h"
 
 class Player {
-
 private:
-	MoveState* state;
-	string name;
-	GPS gps;
+    MoveState* state;
+    std::string name;
+    GPS gps;
+    int steps;
 
 public:
-	void setName(string n);
+    Player(const std::string& playerName, MoveState* initialState);
+    ~Player();
 
-	string getName();
+    void setName(const std::string& n);
+    std::string getName() const;
 
-	string doMove(MoveState* state);
+    void setState(MoveState* newState);
+    MoveState* getState() const;
 
-	Player();
-
-	~Player();
+    std::string doMove(Map* area);
 };
 
 #endif

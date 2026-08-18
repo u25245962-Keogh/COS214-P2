@@ -1,23 +1,43 @@
 #include "Player.h"
-#include "MoveState.h"
 #include <iostream>
 
-using namespace std;
+Player::Player(const std::string& playerName, MoveState* initialState) 
+    : name(playerName), state(initialState), steps(0) {}
 
-void Player::setName(string n) {
-	this->name = n;
+Player::~Player() {
+    delete state; // Free memory on deletion
+    state = nullptr;
 }
 
-string Player::getName() {
-	return this->name;
+void Player::setName(const std::string& n) {
+    this->name = n;
 }
 
-string Player::doMove(MoveState* state) {
-	// TODO - implement Player::doMove
-	throw "Not yet implemented";
+std::string Player::getName() const {
+    return this->name;
 }
 
-Player::Player() {
-	// TODO - implement Player::Player
-	throw "Not yet implemented";
+void Player::setState(MoveState* newState) {
+    if (this->state != newState) {
+        delete this->state; // Free old state to prevent memory leak
+        this->state = newState;
+    }
+}
+
+MoveState* Player::getState() const {
+    return this->state;
+}
+
+std::string Player::doMove(Map* area) {
+    if (!area) {
+        return "Invalid movement area!";
+    }
+    std::string currentTerrain = gps.getPos(*area);
+    steps++;
+
+    if (state) {
+        state->move(this, currentTerrain);
+    }
+
+    return name + " moved to terrain: " + currentTerrain + " (current steps: " + std::to_string(steps) + ")";
 }

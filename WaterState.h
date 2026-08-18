@@ -1,15 +1,14 @@
 #ifndef WATERSTATE_H
 #define WATERSTATE_H
 
-class WaterState : MoveState {
+#include "MoveState.h"
+#include "AirState.h"
+#include "GroundState.h"
+#include "Player.h"
 
-
-public:
-	void move();
-
-	void print();
-
-	WaterState();
+class WaterState : public MoveState{
+    void move(Player* player, const std::string& terrain);
+    std::string getStateName() const;
 };
 
 #endif

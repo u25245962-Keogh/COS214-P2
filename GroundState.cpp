@@ -1,16 +1,18 @@
-#include "..\..\..\..\..\..\..\Shreya\AppData\Roaming\VisualParadigm\ws\teamwork_client\projects\COS214-P2-UML\GroundState.h"
+#include "GroundState.h"
 
-void GroundState::move() {
-	// TODO - implement GroundState::move
-	throw "Not yet implemented";
-}
+void GroundState::move(Player* player, const std::string& terrain){
+        if (terrain == "desert") {
+            std::cout << "Taking off into Air from Desert...\n";
+            player->setState(new AirState());
+        } else if (terrain == "ocean") {
+            std::cout << "Entering Water terrain...\n";
+            player->setState(new WaterState());
+        } else {
+            //current state loop
+            std::cout << "Walking on Ground through " << terrain << "...\n";
+        }
+    }
 
-void GroundState::print() {
-	// TODO - implement GroundState::print
-	throw "Not yet implemented";
-}
-
-GroundState::GroundState() {
-	// TODO - implement GroundState::GroundState
-	throw "Not yet implemented";
-}
+    std::string GroundState::getStateName() const{ 
+        return "Ground"; 
+    }
