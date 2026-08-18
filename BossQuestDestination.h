@@ -1,5 +1,6 @@
 #ifndef BOSSQUESTDESTINATION_H
 #define BOSSQUESTDESTINATION_H
+
 #include "QuestDestination.h"
 #include <string>
 
@@ -10,15 +11,15 @@ private:
 	std::string difficulty;
 
 public:
-	BossQuestDestination(Map* map, std::string bossName = "Boss", std::string difficulty = "Medium");
+	BossQuestDestination(Map* map, std::string bossName = "dragon", std::string difficulty = "hard", std::string questType = "combat");
 
-	void print();
+	void print() override;
 
-	std::string getBossName();
+	std::string getBossName() const;
 
-	std::string getDifficulty();
+	std::string getDifficulty() const;
 
-	~BossQuestDestination();
+	~BossQuestDestination() override;
 };
 
 #endif

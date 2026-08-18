@@ -1,7 +1,9 @@
 #ifndef QUESTDESTINATION_H
 #define QUESTDESTINATION_H
+
 #include "Map.h"
 #include <iostream>
+#include <string>
 
 class QuestDestination : public Map {
 
@@ -14,11 +16,18 @@ public:
 
 	virtual void print() = 0;
 
-	void add(Map* m);
+	void add(Map* m) override;
 
-	void remove(Map* m);
+	void remove(Map* m) override;
 
-	std::string getQuestType();
+	std::string getQuestType() const;
+
+	bool isDestination() const override;
+
+	Terrain* getTerrain() const override;
+	NPC* getNPC() const override;
+	Obstacle* getObstacle() const override;
+	WorldBuilder* getBuilder() const override;
 
 	virtual ~QuestDestination();
 };

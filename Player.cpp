@@ -1,12 +1,15 @@
 #include "Player.h"
+#include "Map.h"
 #include <iostream>
 
 Player::Player(const std::string& playerName, MoveState* initialState) 
-    : name(playerName), state(initialState), steps(0) {}
+    : state(initialState), name(playerName), steps(0) {}
 
 Player::~Player() {
-    delete state; // Free memory on deletion
-    state = nullptr;
+    if (state != nullptr) {
+        delete state;
+        state = nullptr;
+    }
 }
 
 void Player::setName(const std::string& n) {
@@ -19,13 +22,23 @@ std::string Player::getName() const {
 
 void Player::setState(MoveState* newState) {
     if (this->state != newState) {
-        delete this->state; // Free old state to prevent memory leak
+        if (this->state != nullptr) {
+            delete this->state;
+        }
         this->state = newState;
     }
 }
 
 MoveState* Player::getState() const {
     return this->state;
+}
+
+int Player::getSteps() const {
+    return this->steps;
+}
+
+void Player::setSteps(int s) {
+    this->steps = s;
 }
 
 std::string Player::doMove(Map* area) {

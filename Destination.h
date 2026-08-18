@@ -1,21 +1,23 @@
 #ifndef DESTINATION_H
 #define DESTINATION_H
+
 #include "Map.h"
 #include <string>
-using namespace std;
 
 class Destination : public Map {
 
 public:
-	Destination(string title);
+	Destination(std::string title);
 
-	void print();
+	void print() override;
 
-	void add(Map* m);
+	void add(Map* m) override;
 
-	void remove(Map* m);
+	void remove(Map* m) override;
 
-	~Destination();
+	bool isDestination() const override { return true; }
+
+	~Destination() override;
 };
 
 #endif

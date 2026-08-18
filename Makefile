@@ -1,42 +1,56 @@
-# Compiler
-CXX := g++ 
+CXX = g++
+CXXFLAGS = -std=c++11 -Wall -Wextra -g
 
-# Compile options
-CXXFLAGS := -std=c++11 -Wall
+TARGET = wayfarer
 
-# Build directory
-BUILD_DIR := .
+SRCS = main.cpp \
+       AirState.cpp \
+       BossQuestDestination.cpp \
+       DesertTerrain.cpp \
+       Destination.cpp \
+       FetchQuestDestination.cpp \
+       ForestTerrain.cpp \
+       GameManager.cpp \
+       GPS.cpp \
+       GroundState.cpp \
+       Map.cpp \
+       MoveState.cpp \
+       NPC.cpp \
+       Obstacle.cpp \
+       OceanTerrain.cpp \
+       Player.cpp \
+       QuestDestination.cpp \
+       RainWeatherDestination.cpp \
+       Region.cpp \
+       RouteStrategy.cpp \
+       ScenicRouteStrategy.cpp \
+       ShortestRouteStrategy.cpp \
+       SunnyWeatherDestination.cpp \
+       Terrain.cpp \
+       Trip.cpp \
+       WaterState.cpp \
+       WeatherDestination.cpp \
+       WorldBuilder.cpp
 
-# Source directory
-SRC_DIR := .
+# Filter only existing source files
+EXISTING_SRCS = $(wildcard $(SRCS))
+OBJS = $(EXISTING_SRCS:.cpp=.o)
 
-# Linker flags
-LDFLAGS := 
-
-# Linker Libraries
-LDLIBS := 
-
-# Target executable name
-TARGET := $(BUILD_DIR)/wayfarer
-
-# Find all cpp files in the source directory
-SOURCES := $(wildcard $(SRC_DIR)/*.cpp)
-
-# Object files have the same names as cpp files, but with .o extension
-OBJECTS := $(SOURCES:$(SRC_DIR)/%.cpp=$(BUILD_DIR)/%.o)
-
-# Default target
 all: $(TARGET)
 
-# Link the target with all object files
-$(TARGET): $(OBJECTS)
-	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $(TARGET) $(OBJECTS) $(LDLIBS)
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
 
-# Compile each source file to an object file
-$(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
+%.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Clean up target
-.PHONY: clean
+run: $(TARGET)
+	./$(TARGET)
+
+valgrind: $(TARGET)
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(TARGET)
+
 clean:
-	rm -f $(TARGET) $(OBJECTS)
+	rm -f $(OBJS) $(TARGET)
+
+.PHONY: all run valgrind clean

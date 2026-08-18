@@ -1,5 +1,6 @@
 #ifndef RAINWEATHERDESTINATION_H
 #define RAINWEATHERDESTINATION_H
+
 #include "WeatherDestination.h"
 #include <string>
 
@@ -10,15 +11,15 @@ private:
 	std::string windSpeed;
 
 public:
-	RainWeatherDestination(Map* map, std::string rainIntensity = "Moderate", std::string windSpeed = "10 mph");
+	RainWeatherDestination(Map* map, std::string rainIntensity = "moderate", std::string windSpeed = "10kmph");
 
-	void print();
+	void print() override;
 
-	std::string getRainIntensity();
+	std::string getRainIntensity() const;
 
-	std::string getWindSpeed();
+	std::string getWindSpeed() const;
 
-	~RainWeatherDestination();
+	~RainWeatherDestination() override;
 };
 
 #endif

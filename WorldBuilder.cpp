@@ -8,3 +8,6 @@ std::string WorldBuilder::getWorldTitle() const{
 WorldBuilder::WorldBuilder(std::string name) {
  this->worldTitle = name;
 }
+
+WorldBuilder::~WorldBuilder() {
+}

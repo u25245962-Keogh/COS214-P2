@@ -7,3 +7,6 @@ std::string Obstacle::getName() const {
 Obstacle::Obstacle(std::string name){
 	this->name = name;
 }
+
+Obstacle::~Obstacle() {
+}

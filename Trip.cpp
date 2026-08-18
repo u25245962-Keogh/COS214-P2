@@ -1,6 +1,6 @@
 #include "Trip.h"
 
-Trip::Trip(std::string dest) : destination(dest), strategy(nullptr) {
+Trip::Trip(std::string dest) : strategy(nullptr), destination(dest) {
 }
 
 void Trip::planRoute() {
@@ -15,7 +15,12 @@ void Trip::planRoute() {
 }
 
 void Trip::setStrategy(RouteStrategy* s) {
-	strategy = s;
+	if (strategy != s) {
+		if (strategy != nullptr) {
+			delete strategy;
+		}
+		strategy = s;
+	}
 	std::cout << "Strategy set for trip to " << destination << std::endl;
 }
 

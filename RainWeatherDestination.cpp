@@ -1,9 +1,9 @@
 #include "RainWeatherDestination.h"
-#include "WeatherDestination.h"
 #include <iostream>
 
 RainWeatherDestination::RainWeatherDestination(Map* map, std::string rainIntensity, std::string windSpeed) 
-	: WeatherDestination(map, "RainyWeather: " + map->getTitle(), "Rainy"), rainIntensity(rainIntensity), windSpeed(windSpeed) {
+	: WeatherDestination(map, "RainWeatherDestination: " + (map ? map->getTitle() : "Unknown"), "rain"),
+	  rainIntensity(rainIntensity), windSpeed(windSpeed) {
 }
 
 void RainWeatherDestination::print() {
@@ -14,17 +14,17 @@ void RainWeatherDestination::print() {
 	std::cout << "Wind Speed: " << windSpeed << std::endl;
 	std::cout << "Conditions: Slippery terrain, reduced visibility" << std::endl;
 	if (wrappedMap != nullptr) {
-		std::cout << "Area details:" << std::endl;
+		std::cout << "Encapsulated Place:" << std::endl;
 		wrappedMap->print();
 	}
 	std::cout << "-----------------------------" << std::endl;
 }
 
-std::string RainWeatherDestination::getRainIntensity() {
+std::string RainWeatherDestination::getRainIntensity() const {
 	return rainIntensity;
 }
 
-std::string RainWeatherDestination::getWindSpeed() {
+std::string RainWeatherDestination::getWindSpeed() const {
 	return windSpeed;
 }
 

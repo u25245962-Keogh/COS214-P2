@@ -1,5 +1,6 @@
 #ifndef FETCHQUESTDESTINATION_H
 #define FETCHQUESTDESTINATION_H
+
 #include "QuestDestination.h"
 #include <string>
 
@@ -10,15 +11,15 @@ private:
 	std::string itemLocation;
 
 public:
-	FetchQuestDestination(Map* map, std::string itemName = "Item", std::string itemLocation = "Unknown");
+	FetchQuestDestination(Map* map, std::string itemName = "Ancient Relic", std::string itemLocation = "Hidden Cavern", std::string questType = "fetch");
 
-	void print();
+	void print() override;
 
-	std::string getItemName();
+	std::string getItemName() const;
 
-	std::string getItemLocation();
+	std::string getItemLocation() const;
 
-	~FetchQuestDestination();
+	~FetchQuestDestination() override;
 };
 
 #endif

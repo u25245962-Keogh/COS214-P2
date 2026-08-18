@@ -1,5 +1,6 @@
 #ifndef SUNNYWEATHERDESTINATION_H
 #define SUNNYWEATHERDESTINATION_H
+
 #include "WeatherDestination.h"
 #include <string>
 
@@ -12,13 +13,13 @@ private:
 public:
 	SunnyWeatherDestination(Map* map, std::string temperature = "75F", std::string uvIndex = "High");
 
-	void print();
+	void print() override;
 
-	std::string getTemperature();
+	std::string getTemperature() const;
 
-	std::string getUVIndex();
+	std::string getUVIndex() const;
 
-	~SunnyWeatherDestination();
+	~SunnyWeatherDestination() override;
 };
 
 #endif

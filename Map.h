@@ -7,6 +7,7 @@
 #include "WorldBuilder.h"
 #include "GPS.h"
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -27,16 +28,27 @@ public:
 
 	virtual void remove(Map* m) = 0;
 
-	std::string getTitle();
+	std::string getTitle() const;
 
 	void setTitle(std::string title);
 
 	virtual void print();
 
-	 virtual ~Map();
+	virtual bool isDestination() const { return false; }
 
-	 friend class GPS;
+	void setTerrain(Terrain* t);
+	void setNPC(NPC* n);
+	void setObstacle(Obstacle* o);
+	void setBuilder(WorldBuilder* b);
+
+	virtual Terrain* getTerrain() const;
+	virtual NPC* getNPC() const;
+	virtual Obstacle* getObstacle() const;
+	virtual WorldBuilder* getBuilder() const;
+
+	virtual ~Map();
+
+	friend class GPS;
 };
-
 
 #endif

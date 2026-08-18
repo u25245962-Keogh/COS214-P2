@@ -3,5 +3,8 @@
 #include <string>
 
 std::string GPS::getPos(const Map& map) {
-	return map.terrain->getName();
+	if (map.getTerrain() != nullptr) {
+		return map.getTerrain()->getName();
+	}
+	return "unknown";
 }

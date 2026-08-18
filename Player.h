@@ -3,7 +3,9 @@
 
 #include <string>
 #include "MoveState.h"
-#include "Map.h"
+#include "GPS.h"
+
+class Map;
 
 class Player {
 private:
@@ -21,6 +23,9 @@ public:
 
     void setState(MoveState* newState);
     MoveState* getState() const;
+
+    int getSteps() const;
+    void setSteps(int s);
 
     std::string doMove(Map* area);
 };

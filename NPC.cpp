@@ -9,3 +9,6 @@ NPC::NPC(std::string s)
 	this->name = s;
 }
 
+NPC::~NPC() {
+}
+

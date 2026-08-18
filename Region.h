@@ -1,7 +1,9 @@
 #ifndef REGION_H
 #define REGION_H
+
 #include "Map.h"
 #include <vector>
+#include <string>
 
 class Region : public Map {
 
@@ -11,13 +13,17 @@ private:
 public:
 	Region(std::string title);
 
-	void add(Map* m);
+	void add(Map* m) override;
 
-	void remove(Map* m);
+	void remove(Map* m) override;
 
-	std::vector<Map*> getChildren();
+	std::vector<Map*> getChildren() const;
 
-	~Region();
+	void print() override;
+
+	bool isDestination() const override { return false; }
+
+	~Region() override;
 };
 
 #endif

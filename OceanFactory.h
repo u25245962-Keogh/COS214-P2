@@ -9,6 +9,7 @@
 class OceanFactory : public WorldBuilder{
 
 public:
+    OceanFactory() : WorldBuilder("Ocean") {}
     Terrain* createTerrain(){ return new OceanTerrain(); }
     NPC* createNPC(std::string NPCname) { return new OceanNPC(NPCname); }
     Obstacle* createObstacle(std::string obstacleName) { return new OceanObstacle(obstacleName); }

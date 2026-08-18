@@ -1,30 +1,28 @@
 #include "FetchQuestDestination.h"
-#include "QuestDestination.h"
 #include <iostream>
 
-FetchQuestDestination::FetchQuestDestination(Map* map, std::string itemName, std::string itemLocation) 
-	: QuestDestination(map, "FetchQuest: " + itemName, "Collection"), itemName(itemName), itemLocation(itemLocation) {
+FetchQuestDestination::FetchQuestDestination(Map* map, std::string itemName, std::string itemLocation, std::string questType)
+	: QuestDestination(map, "FetchQuestDestination: " + (map ? map->getTitle() : "Unknown"), questType),
+	  itemName(itemName), itemLocation(itemLocation) {
 }
 
 void FetchQuestDestination::print() {
 	std::cout << "=== Fetch Quest Destination ===" << std::endl;
-	std::cout << "Title: " << getTitle() << std::endl;
 	std::cout << "Quest Type: " << questType << std::endl;
-	std::cout << "Item to Fetch: " << itemName << std::endl;
+	std::cout << "Item Name: " << itemName << std::endl;
 	std::cout << "Item Location: " << itemLocation << std::endl;
-	std::cout << "Objective: Fetch the required item" << std::endl;
 	if (wrappedMap != nullptr) {
-		std::cout << "Area details:" << std::endl;
+		std::cout << "Encapsulated Place:" << std::endl;
 		wrappedMap->print();
 	}
-	std::cout << "-----------------------------" << std::endl;
+	std::cout << "===============================" << std::endl;
 }
 
-std::string FetchQuestDestination::getItemName() {
+std::string FetchQuestDestination::getItemName() const {
 	return itemName;
 }
 
-std::string FetchQuestDestination::getItemLocation() {
+std::string FetchQuestDestination::getItemLocation() const {
 	return itemLocation;
 }
 

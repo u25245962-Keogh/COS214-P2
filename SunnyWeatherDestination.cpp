@@ -1,9 +1,9 @@
 #include "SunnyWeatherDestination.h"
-#include "WeatherDestination.h"
 #include <iostream>
 
 SunnyWeatherDestination::SunnyWeatherDestination(Map* map, std::string temperature, std::string uvIndex) 
-	: WeatherDestination(map, "SunnyWeather: " + map->getTitle(), "Sunny"), temperature(temperature), uvIndex(uvIndex) {
+	: WeatherDestination(map, "SunnyWeatherDestination: " + (map ? map->getTitle() : "Unknown"), "sunny"),
+	  temperature(temperature), uvIndex(uvIndex) {
 }
 
 void SunnyWeatherDestination::print() {
@@ -14,17 +14,17 @@ void SunnyWeatherDestination::print() {
 	std::cout << "UV Index: " << uvIndex << std::endl;
 	std::cout << "Conditions: Clear skies, excellent visibility, hot" << std::endl;
 	if (wrappedMap != nullptr) {
-		std::cout << "Area details:" << std::endl;
+		std::cout << "Encapsulated Place:" << std::endl;
 		wrappedMap->print();
 	}
 	std::cout << "-----------------------------" << std::endl;
 }
 
-std::string SunnyWeatherDestination::getTemperature() {
+std::string SunnyWeatherDestination::getTemperature() const {
 	return temperature;
 }
 
-std::string SunnyWeatherDestination::getUVIndex() {
+std::string SunnyWeatherDestination::getUVIndex() const {
 	return uvIndex;
 }
 

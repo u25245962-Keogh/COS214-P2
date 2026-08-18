@@ -13,7 +13,7 @@ public:
 
 	virtual ~Terrain();
 
-	std::string getName() const;
+	virtual std::string getName() const;
 
 };
 
