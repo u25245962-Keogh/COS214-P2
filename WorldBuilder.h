@@ -2,6 +2,9 @@
 #define WORLDBUILDER_H
 
 #include <iostream>
+#include "Terrain.h"
+#include "Obstacle.h"
+#include "NPC.h"
 
 class WorldBuilder {
 
@@ -13,12 +16,11 @@ public:
 
 	std::string getWorldTitle() const;
 
+	virtual Obstacle* createObstacle() = 0;
 
-	virtual void createObstacle() = 0;
+	virtual Terrain* createTerrain() = 0;
 
-	virtual void createTerrain() = 0;
-
-	virtual void createNPC() = 0;
+	virtual NPC* createNPC() = 0;
 
 	WorldBuilder(std::string);
 };
