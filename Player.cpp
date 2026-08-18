@@ -1,4 +1,8 @@
-#include "..\..\..\..\..\..\..\Shreya\AppData\Roaming\VisualParadigm\ws\teamwork_client\projects\COS214-P2-UML\Player.h"
+#include "Player.h"
+#include "MoveState.h"
+#include <iostream>
+
+using namespace std;
 
 void Player::setName(string n) {
 	this->name = n;

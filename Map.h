@@ -1,16 +1,22 @@
 #ifndef MAP_H
 #define MAP_H
 
+#include "Obstacle.h"
+#include "Terrain.h"
+#include "NPC.h"
+#include "WorldBuilder.h"
+#include "GPS.h"
 #include <iostream>
-#include <string>
+
+using namespace std;
 
 class Map {
 
 protected:
 	Obstacle obstacle;
-	Terrain terrain;
-	NPC npc;
-	WorldBuilder builder;
+	Terrain* terrain;
+	NPC* npc;
+	WorldBuilder* builder;
 private:
 	std::string title;
 
@@ -25,7 +31,10 @@ public:
 
 	void setTitle(std::string title);
 
-	~Map();
+	 ~Map();
+
+	 friend class GPS;
 };
+
 
 #endif
