@@ -2,7 +2,7 @@
 CXX := g++ 
 
 # Compile options
-CXXFLAGS := -std=c++17 -Wall
+CXXFLAGS := -std=c++11 -Wall
 
 # Build directory
 BUILD_DIR := .
