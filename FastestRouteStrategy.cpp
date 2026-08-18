@@ -1,11 +1,19 @@
-#include "..\..\..\..\..\..\..\Shreya\AppData\Roaming\VisualParadigm\ws\teamwork_client\projects\COS214-P2-UML\FastestRouteStrategy.h"
+#include "FastestRouteStrategy.h"
+#include <iostream>
 
 FastestRouteStrategy::FastestRouteStrategy() {
-	// TODO - implement FastestRouteStrategy::FastestRouteStrategy
-	throw "Not yet implemented";
 }
 
-void FastestRouteStrategy::Path() {
-	// TODO - implement FastestRouteStrategy::Path
-	throw "Not yet implemented";
+std::string FastestRouteStrategy::calculateRoute() {
+	return "Using fastest route (time-optimized path)";
+}
+
+void FastestRouteStrategy::print() {
+	std::cout << "Fastest Route Strategy" << std::endl;
+	std::cout << "Prioritize travel time" << std::endl;
+	std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
+}
+
+FastestRouteStrategy::~FastestRouteStrategy() {
+	std::cout << "Deleting FastestRouteStrategy" << std::endl;
 }

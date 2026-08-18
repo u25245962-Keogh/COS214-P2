@@ -1,11 +1,19 @@
-#include "..\..\..\..\..\..\..\Shreya\AppData\Roaming\VisualParadigm\ws\teamwork_client\projects\COS214-P2-UML\ShortestRouteStrategy.h"
+#include "ShortestRouteStrategy.h"
+#include <iostream>
 
 ShortestRouteStrategy::ShortestRouteStrategy() {
-	// TODO - implement ShortestRouteStrategy::ShortestRouteStrategy
-	throw "Not yet implemented";
 }
 
-void ShortestRouteStrategy::Path() {
-	// TODO - implement ShortestRouteStrategy::Path
-	throw "Not yet implemented";
+std::string ShortestRouteStrategy::calculateRoute() {
+	return "Using shortest route (minimum distance algorithm)";
+}
+
+void ShortestRouteStrategy::print() {
+	std::cout << "Shortest Route Strategy" << std::endl;
+	std::cout << "Prioritize short distance" << std::endl;
+		std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
+}
+
+ShortestRouteStrategy::~ShortestRouteStrategy() {
+	std::cout << "Deleting ShortestRouteStrategy" << std::endl;
 }

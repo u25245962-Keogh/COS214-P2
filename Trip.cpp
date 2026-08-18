@@ -1,15 +1,31 @@
-#include "..\..\..\..\..\..\..\Shreya\AppData\Roaming\VisualParadigm\ws\teamwork_client\projects\COS214-P2-UML\Trip.h"
+#include "Trip.h"
 
-Trip::Trip() {
-	// TODO - implement Trip::Trip
-	throw "Not yet implemented";
+Trip::Trip(std::string dest) : destination(dest), strategy(nullptr) {
 }
 
 void Trip::planRoute() {
-	// TODO - implement Trip::planRoute
-	throw "Not yet implemented";
+	if (strategy != nullptr) {
+		std::cout << "\n=== Planning trip to " << destination << " ===" << std::endl;
+		strategy->print();
+		std::string route = strategy->calculateRoute();
+		std::cout << "Route: " << route << std::endl;
+	} else {
+		std::cout << "Error: No strategy set for trip to " << destination << std::endl;
+	}
 }
 
 void Trip::setStrategy(RouteStrategy* s) {
-	this->strategy = s;
+	strategy = s;
+	std::cout << "Strategy set for trip to " << destination << std::endl;
+}
+
+std::string Trip::getDestination() {
+	return destination;
+}
+
+Trip::~Trip() {
+	std::cout << "Deleting Trip to " << destination << std::endl;
+	if (strategy != nullptr) {
+		delete strategy;
+	}
 }

@@ -1,11 +1,19 @@
-#include "..\..\..\..\..\..\..\Shreya\AppData\Roaming\VisualParadigm\ws\teamwork_client\projects\COS214-P2-UML\ScenicRouteStrategy.h"
+#include "ScenicRouteStrategy.h"
+#include <iostream>
 
 ScenicRouteStrategy::ScenicRouteStrategy() {
-	// TODO - implement ScenicRouteStrategy::ScenicRouteStrategy
-	throw "Not yet implemented";
 }
 
-void ScenicRouteStrategy::Path() {
-	// TODO - implement ScenicRouteStrategy::Path
-	throw "Not yet implemented";
+std::string ScenicRouteStrategy::calculateRoute() {
+	return "Using scenic route";
+}
+
+void ScenicRouteStrategy::print() {
+	std::cout << "Scenic Route" << std::endl;
+	std::cout << "Prioritize scenic beauty" << std::endl;
+	std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
+}
+
+ScenicRouteStrategy::~ScenicRouteStrategy() {
+	std::cout << "Deleting ScenicRouteStrategy" << std::endl;
 }

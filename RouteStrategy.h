@@ -1,17 +1,16 @@
 #ifndef ROUTESTRATEGY_H
 #define ROUTESTRATEGY_H
+#include <string>
+#include <iostream>
 
 class RouteStrategy {
 
-
 public:
-	void Path();
-
-	RouteStrategy();
+	virtual std::string calculateRoute() = 0;
 
 	virtual void print() = 0;
 
-	virtual void ~RouteStrategy() = 0;
+	virtual ~RouteStrategy();
 };
 
 #endif
